@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swati Behera WEBSITES - Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: blueviolet;
+            padding: 15px;
+            transition: 0.3s;
+        }
+        nav.scrolled {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        ul li {
+            display: inline;
+        }
+        ul li a {
+            text-decoration: none;
+            color: rgb(248, 12, 12);
+            font-weight: bold;
+        }
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #f5f5f5;
+        }
+        section {
+            height: 100vh;
+            padding: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <header id="home">
+        <h1>Welcome to <span class="highlight">Swati Websites</span></h1>
+        <p>A Passionate Web Developer & Designer</p>
+        <button onclick="scrollToSection('about')">Learn More</button>
+    </header>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a dedicated Web Developer skilled in HTML, CSS, JavaScript, ReactJS, and more. Passionate about creating interactive and user-friendly web experiences.</p>
+    </section>
+    
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skill-container">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">ReactJS</div>
+            <div class="skill">C++</div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out for collaborations or any queries.</p>
+        <button onclick="scrollToSection('home')">Back to Top</button>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Swati Behera | All Rights Reserved</p>
+    </footer>
+    
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
